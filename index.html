@@ -27,13 +27,14 @@
               <i class="fas fa-check"></i>
             </span>
             <span class="right"
+            @click="edit(todo)"
             v-if="todo.status != 'delete'"
             >
               <i class="far fa-edit"></i>
             </span>
             <span class="right"
             @click="remove(todo)"
-            v-if="todo.status == 'delet'"
+            v-if="todo.status == 'delete'"
             >
               <i class="fas fa-trash"></i>
             </span>

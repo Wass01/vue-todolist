@@ -39,6 +39,19 @@ var app = new Vue(
       check: function(todo) {
         let index = this.todos.indexOf(todo);
         this.todos[index].status = 'delete';
+      },
+
+      // click icon remove
+      remove: function(todo) {
+        let index = this.todos.indexOf(todo);
+        this.todos.splice(index, 1);
+      },
+
+      // click icon edit
+      edit: function(todo) {
+        let index = this.todos.indexOf(todo);
+        this.utentText = this.todos[index].title;
+        this.todos.splice(index, 1);
       }
   }
   }
