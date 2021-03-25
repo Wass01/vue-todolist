@@ -36,6 +36,10 @@ ul.todos li{
   vertical-align: middle;
 }
 
+.right i:hover{
+  cursor: pointer;
+}
+
 .write{
   width: 340px;
   margin-top: 20px;
@@ -44,4 +48,8 @@ ul.todos li{
   padding: 6px;
   border-radius: 5px;
   box-shadow: 2px 2px 4px #faff00;
+}
+
+.cancel{
+  text-decoration: line-through;
 }

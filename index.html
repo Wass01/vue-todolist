@@ -15,10 +15,26 @@
         <h1 id="title">Todolist</h1>
 
         <ul class="todos">
-          <li v-for="todo in todos">
-            <span class="listUtent">{{ todo.title }}</span>
-            <span class="right"><i class="fas fa-check"></i></span>
-            <span class="right"><i class="far fa-edit"></i></span>
+          <li v-for="todo in todoCpu">
+            <span class="listUtent"
+            :class="(todo.status == 'delete') ? 'cancel' : ''">
+              {{ todo.title }}
+            </span>
+            <span
+            class="right"
+            @click="check(todo)"
+            v-if="todo.status != 'done'">
+              <i class="fas fa-check"></i>
+            </span>
+            <span class="right">
+              <i class="far fa-edit"></i>
+            </span>
+            <span class="right" 
+            @click="remove(todo)"
+            v-if="todo.status == 'done'"
+            >
+              <i class="fas fa-trash"></i>
+            </span>
           </li>
         </ul>
 
