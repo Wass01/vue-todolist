@@ -23,13 +23,15 @@
             <span
             class="right"
             @click="check(todo)"
-            v-if="todo.status != 'done'">
+            v-if="todo.status != 'delete'">
               <i class="fas fa-check"></i>
             </span>
-            <span class="right">
+            <span class="right"
+            v-if="todo.status != 'delete'"
+            >
               <i class="far fa-edit"></i>
             </span>
-            <span class="right" 
+            <span class="right"
             @click="remove(todo)"
             v-if="todo.status == 'done'"
             >
