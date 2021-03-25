@@ -13,16 +13,20 @@
     <div class="container">
       <div class="mini-container">
         <h1 id="title">Todolist</h1>
+
         <ul class="todos">
           <li v-for="todo in todos">
             <span class="listUtent">{{ todo.title }}</span>
-            <span class="right"><i class="far fa-edit"></i></span>
             <span class="right"><i class="fas fa-check"></i></span>
+            <span class="right"><i class="far fa-edit"></i></span>
           </li>
         </ul>
+
         <input type="text"
         placeholder="Inserisci il tuo todo"
         class="write"
+        v-model="utentText"
+        @keyup.enter="add"
         >
       </div>
     </div>
